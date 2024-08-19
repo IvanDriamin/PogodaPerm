@@ -6,8 +6,12 @@ response = requests.get(url)
 bs = BeautifulSoup(response.text,"lxml")
 mas = []
 dict = []
-mas.append(bs.find('span', 'temp__value temp__value_with-unit')) #tempDay1
-mas.append(bs.find('strong', 'forecast-details__day-number')) #tempDay2
+tempDay1 = bs.find('div', 'temp forecast-briefly__temp forecast-briefly__temp_day')
+mas.append(tempDay1.text)
+tempDay2 = bs.find('div', 'temp forecast-briefly__temp forecast-briefly__temp_day')
+mas.append(tempDay2.text)
+tempDay3 = bs.find('div', 'temp forecast-briefly__temp forecast-briefly__temp_day')
+mas.append(tempDay3.text)
 #mas.append(bs.find('', '')) #tempDay3
 #mas.append(bs.find('', '')) #tempDay4
 #mas.append(bs.find('', '')) #tempDay5
@@ -46,36 +50,32 @@ mas.append(bs.find('strong', 'forecast-details__day-number')) #tempDay2
 #mas.append(bs.find('', '')) #pressure6
 #mas.append(bs.find('', '')) #pressure7
 
-#dict.append(bs.find('', '')) #weatherDay1
-#dict.append(bs.find('', '')) #weatherDay2
-#dict.append(bs.find('', '')) #weatherDay3
-#dict.append(bs.find('', '')) #weatherDay4
-#dict.append(bs.find('', '')) #weatherDay5
-#dict.append(bs.find('', '')) #weatherDay6
-#dict.append(bs.find('', '')) #weatherDay7
+#mas.append(bs.find('', '')) #weatherDay1
+#mas.append(bs.find('', '')) #weatherDay2
+#mas.append(bs.find('', '')) #weatherDay3
+#mas.append(bs.find('', '')) #weatherDay4
+#mas.append(bs.find('', '')) #weatherDay5
+#mas.append(bs.find('', '')) #weatherDay6
+#mas.append(bs.find('', '')) #weatherDay7
 
-#dict.append(bs.find('', '')) #weatherNight1
-#dict.append(bs.find('', '')) #weatherNight2
-#dict.append(bs.find('', '')) #weatherNight3
-#dict.append(bs.find('', '')) #weatherNight4
-#dict.append(bs.find('', '')) #weatherNight5
-#dict.append(bs.find('', '')) #weatherNight6
-#dict.append(bs.find('', '')) #weatherNight7
+#mas.append(bs.find('', '')) #weatherNight1
+#mas.append(bs.find('', '')) #weatherNight2
+#mas.append(bs.find('', '')) #weatherNight3
+#mas.append(bs.find('', '')) #weatherNight4
+#mas.append(bs.find('', '')) #weatherNight5
+#mas.append(bs.find('', '')) #weatherNight6
+#mas.append(bs.find('', '')) #weatherNight7
 
-#dict.append(bs.find('', '')) #windDirection1
-#dict.append(bs.find('', '')) #windDirection2
-#dict.append(bs.find('', '')) #windDirection3
-#dict.append(bs.find('', '')) #windDirection4
-#dict.append(bs.find('', '')) #windDirection5
-#dict.append(bs.find('', '')) #windDirection6
-#dict.append(bs.find('', '')) #windDirection7
+#mas.append(bs.find('', '')) #windDirection1
+#mas.append(bs.find('', '')) #windDirection2
+#mas.append(bs.find('', '')) #windDirection3
+#mas.append(bs.find('', '')) #windDirection4
+#mas.append(bs.find('', '')) #windDirection5
+#mas.append(bs.find('', '')) #windDirection6
+#mas.append(bs.find('', '')) #windDirection7
 mas.append(333)
-dict.append("CLOSED")
 i = 0
 while mas[i] != 333:
     print(mas[i])
     i += 1
 j = 0
-while dict[j] != "CLOSED":
-    print(dict[j])
-    j += 1
